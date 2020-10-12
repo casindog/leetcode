@@ -26,18 +26,13 @@ TwoSum.prototype.add = function (number) {
 TwoSum.prototype.find = function (value) {
   let sorted = this.addedNums.sort((a, b) => a - b);
 
-  let left = 0;
-  let right = this.addedNums.length - 1;
+  let [left, right] = [0, sorted.length - 1];
 
   while (left < right) {
     let potentialMatch = sorted[left] + sorted[right];
-    if (potentialMatch < value) {
-      left += 1;
-    } else if (potentialMatch > value) {
-      right -= 1;
-    } else if (potentialMatch === value) {
-      return true;
-    }
+    if (potentialMatch < value) left += 1;
+    else if (potentialMatch > value) right -= 1;
+    else if (potentialMatch === value) return true;
   }
   return false;
 };
