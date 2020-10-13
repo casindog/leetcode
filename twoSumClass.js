@@ -68,3 +68,38 @@ TwoSum.prototype.find = function (value) {
 // }
 
 // this.addedNums[number] ? this.addedNums[number] += 1 : this.addedNums[number] = 1
+
+
+// KC. I tried running my code w/ a map data structure instead of an object. that made a difference in terms of speed. 
+
+// var TwoSum = function() {
+//     this.hash = {}
+// };
+
+// /**
+//  * Add the number to an internal data structure.. 
+//  * @param {number} number
+//  * @return {void}
+//  */
+// TwoSum.prototype.add = function(number) {
+//     this.hash[number] = 1 + (this.hash[number] || 0)
+// };
+
+// /**
+//  * Find if there exists any pair of numbers which sum is equal to the value. 
+//  * @param {number} value
+//  * @return {boolean}
+//  */
+// TwoSum.prototype.find = function(value) {
+//     // console.log(this.hash)
+//     const arr = Object.keys(this.hash)
+//     for (let i=0; i<arr.length; i++) {
+//         const [k,v] = [parseInt(arr[i]), this.hash[arr[i]]]
+//         const complement = value - k
+//         if (complement in this.hash) {
+//             if (complement === k && v > 1) return true 
+//             if (complement !== k) return true
+//         }
+//     }
+//     return false
+// };
